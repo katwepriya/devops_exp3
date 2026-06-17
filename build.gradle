@@ -14,9 +14,11 @@ dependencies {
 application{
    mainClass='org.example.Main'
 }
+
 test{
-    use TestNG()
+    TestNG()
 }
+
 tasks.register('prepareDocs',Copy) {
 description='Copies HTML, CSS, and images to docs folder.'
     group='documentaion'
