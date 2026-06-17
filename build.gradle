@@ -1,0 +1,24 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+}
+application{
+   mainClass='org.example.Main'
+}
+tasks.register('prepareDocs',Copy) {
+description='Copies HTML, CSS, and images to docs folder.'
+    group='documentaion'
+    from('src/main/resources/website') {
+        include '**/*.html', '**/*.css', '**/*.png'
+    }
+    into("rootDir/docs")
+    }
