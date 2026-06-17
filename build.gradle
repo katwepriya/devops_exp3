@@ -7,12 +7,15 @@ repositories {
 }
 
 dependencies {
-
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    implementation("org.seleniumhq.selenium:selenium-java:4.42.0")
+    testImplementation("org.testng:testng:7.12.0")
 
 }
 application{
    mainClass='org.example.Main'
+}
+test{
+    use TestNG()
 }
 tasks.register('prepareDocs',Copy) {
 description='Copies HTML, CSS, and images to docs folder.'
